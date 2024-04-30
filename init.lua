@@ -45,6 +45,7 @@ require("lazy").setup(plugins, opts)
 
 
 ----------------------------Lsp Zero----------------------------
+
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
@@ -54,9 +55,9 @@ end)
 ----------------------------Treesitter Highlighting----------------------------
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = "all",     
+  ensure_installed = "all",
   highlight = {
-    enable = true              
+    enable = true
   },
 }
 
