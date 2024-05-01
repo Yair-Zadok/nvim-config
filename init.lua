@@ -1,17 +1,16 @@
 ----------------------------Leader Key----------------------------
 
 vim.g.mapleader = " "
+vim.opt.relativenumber = true
 
 ----------------------------Plugins----------------------------
 
 local plugins = {
 {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
---{'hrsh7th/nvim-cmp'},
 {'williamboman/mason.nvim'}, {'williamboman/mason-lspconfig.nvim'},
 {'neovim/nvim-lspconfig'},
---{'hrsh7th/cmp-nvim-lsp'},
 {'L3MON4D3/LuaSnip'},
-{"EdenEast/nightfox.nvim"},
+{'savq/melange-nvim'},
 {'nvim-treesitter/nvim-treesitter'},
 {'nvim-telescope/telescope.nvim', tag = '0.1.6', dependencies = {'nvim-lua/plenary.nvim'}},
 {'mfussenegger/nvim-dap'},
@@ -20,6 +19,7 @@ local plugins = {
 {'leoluz/nvim-dap-go'},
 {'theHamsta/nvim-dap-virtual-text'},
 {'akinsho/toggleterm.nvim', version = "*", config = true},
+{'glepnir/zephyr-nvim'},
 }
 
 local opts = {}
@@ -85,7 +85,10 @@ require('lspconfig').pyright.setup({})
 
 ----------------------------Themes----------------------------
 
-vim.cmd("colorscheme carbonfox")
+vim.opt.termguicolors = true
+vim.cmd.colorscheme 'melange'
+
+require("zephyr")
 
 ----------------------------Dap Debugger----------------------------
 
@@ -102,7 +105,6 @@ require("toggleterm").setup{
 ----------------------------Keymaps----------------------------
 
 vim.keymap.set({'i'}, 'jk', '<Esc>')
-vim.opt.relativenumber = true
 vim.opt.clipboard:append("unnamedplus") --Makes copy in nvim go to real clip board
 
 --Make tabs 4 spaces
