@@ -10,7 +10,6 @@ local plugins = {
 {'williamboman/mason.nvim'}, {'williamboman/mason-lspconfig.nvim'},
 {'neovim/nvim-lspconfig'},
 {'L3MON4D3/LuaSnip'},
-{'savq/melange-nvim'},
 {'nvim-treesitter/nvim-treesitter'},
 {'nvim-telescope/telescope.nvim', tag = '0.1.6', dependencies = {'nvim-lua/plenary.nvim'}},
 {'mfussenegger/nvim-dap'},
@@ -86,8 +85,6 @@ require('lspconfig').pyright.setup({})
 ----------------------------Themes----------------------------
 
 vim.opt.termguicolors = true
-vim.cmd.colorscheme 'melange'
-
 require("zephyr")
 
 ----------------------------Dap Debugger----------------------------
