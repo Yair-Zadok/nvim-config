@@ -19,6 +19,7 @@ local plugins = {
 {'theHamsta/nvim-dap-virtual-text'},
 {'akinsho/toggleterm.nvim', version = "*", config = true},
 {'glepnir/zephyr-nvim'},
+{"eoh-bse/minintro.nvim", opts = { color = "#D6AD60" }, config = true, lazy = false},
 }
 
 local opts = {}
