@@ -104,6 +104,11 @@ require("toggleterm").setup{
 
 ----------------------------Keymaps----------------------------
 
+vim.o.timeoutlen = 155
+
+vim.keymap.set('n', '<Leader>e', ':edit $MYVIMRC<CR>', {})
+vim.keymap.set('n', '<Leader>s', ':w<CR>', {})
+vim.keymap.set('n', '<Leader>w', ':wq<CR>', {})
 vim.keymap.set({'i'}, 'jk', '<Esc>')
 vim.opt.clipboard:append("unnamedplus") --Makes copy in nvim go to real clip board
 
@@ -119,9 +124,20 @@ vim.opt.colorcolumn = "80"
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<Leader>f', builtin.find_files, {})
-vim.keymap.set('n', '<Leader>g', builtin.current_buffer_fuzzy_find, {})
+vim.keymap.set('n', '<Leader>l', builtin.current_buffer_fuzzy_find, {})
+vim.keymap.set('n', '<Leader>g', builtin.live_grep, {})
 vim.keymap.set('n', '<Leader>b', builtin.buffers, {})
 
+local actions = require("telescope.actions")
+require("telescope").setup({
+    defaults = {
+        mappings = {
+            i = {
+                ["<esc>"] = actions.close,
+            },
+        },
+    },
+})
 ----------------------------Dap Keymaps----------------------------
 
 local dap = require('dap')
