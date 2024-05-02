@@ -97,7 +97,9 @@ require("nvim-dap-virtual-text").setup({
     only_first_definition = false,
 })
 require("toggleterm").setup{
-    open_mapping = '<Leader>t'
+    open_mapping = '<Leader>t',
+    insert_mappings = false,
+    terminal_mappings = true
 }
 
 ----------------------------Keymaps----------------------------
